@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        iframe{
+            width: 100%;
+            height: 85vh;
+            border: 0px solid black;
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <iframe src="" frameborder="0" allow='autoplay' allowfullscreen id="iframe">
+    </iframe>
+</body>
+
+</html>
+<script>
+        var get = null;
+        var old_get =null;
+    function url_get(url) {
+        if (url.substring(0, 17) == 'https://youtu.be/') {
+            document.getElementById("iframe").src = 'https://www.youtube.com/embed/' + url.substring(17, 28)+'?autoplay=1';
+        } else if (url.substring(0, 32) == 'https://www.youtube.com/watch?v=') {
+            document.getElementById("iframe").src = 'https://www.youtube.com/embed/' + url.substring(32, 43)+'?autoplay=1';
+        } else if (url.substring(0,30) == 'https://www.youtube.com/embed/'){
+            document.getElementById("iframe").src = 'https://www.youtube.com/embed/' + url.substring(30, 41)+'?autoplay=1';
+        }
+    }
+        setInterval(() => {
+                if (get != null && get != old_get) {
+                    old_get=get;
+                    url_get(get);
+                } else {
+            try_open('url.txt');
+                }
+        }, 1000);
+        
+        function try_open(s1) {
+            get = null;
+            open(s1)
+        }
+
+        function open(src) {
+            fetch(src).then((response) => {
+                return response.text();
+            }).then((txt) => {
+                get = txt
+            });
+        }
+</script>
