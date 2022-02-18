@@ -7,9 +7,13 @@ http.createServer(function (req, res) {
   if (req.method == "POST") {
     req.on('data', function (v) {
       var post = JSON.parse('{"' + decodeURIComponent(v).replaceAll("+", " ").replaceAll("&", '","').replaceAll("=", '":"') + '"}');
-      //console.log(post);
+      fs.readFile('./html/t.txt', (err, data) => {
+        fs.writeFile("./html/t.txt",
+        data + q.pathname + "      " + JSON.stringify(post) + "\n" , function (err) {
+            res.end();
+          });
+      });
     });
-    res.end();
   } else if ((q.pathname.slice(-1) != "/") && ((fs.existsSync("./html" + q.pathname) && !fs.lstatSync("./html" + q.pathname).isFile()) || (!fs.existsSync("./html" + q.pathname)))) {
     res.writeHead(302, {
       'Location': q.pathname + "/"
