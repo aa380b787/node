@@ -1,0 +1,704 @@
+<link rel="icon" href="xo-icon.ico"><meta charset="UTF-8"></head><body onselectstart="return false;">
+<script src="q.js"></script>
+<style>
+
+</style>
+<script>
+  
+function fview(){
+  
+ jbh = window.innerHeight;
+ jbw = window.innerWidth/1.4;
+  if(jbh<=jbw){jpx=jbh;}else{jpx=jbw;}
+j200=jpx/5
+j40=jpx/25
+j680=jpx/1.47
+jfont=jpx/20
+jcss=`
+@keyframes mymove {
+    0% {transform: rotate(180deg);}
+    100% {transform: rotate(360deg);}
+}
+.qrr{
+    /*animation-play-state: paused;*/
+    animation:.5s mymove 1 alternate linear forwards 0s; 
+    /*infinite|2|5|10*/
+    /*cubic-bezier(0.42,0,1,1)*/
+    /*normal|reverse|alternate|alternate-reverse*/
+    /*none|forwards|backwards|both*/
+}
+i{
+  font-family:Lucida Calligraphy;
+}
+b{
+  color:blue;
+}
+.we {
+	box-shadow:inset -6px -20px 15px -7px #ffffff;
+	background-color:transparent;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:rgb(80%,0%,0%);
+	font-family:Georgia;
+	font-size:`+jfont/1.5+`px;
+	font-weight:bold;
+	font-style:italic;
+	padding:`+j40/2+`;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+  height:`+j40+`;
+  width:`+j200/1.5+`;
+  margin:`+j40/2+`;
+  text-align:center;
+}
+.we:hover {
+	background-color:transparent;
+}
+.we:active {
+	position:relative;
+	top:1px;
+}
+
+* {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+body{
+  overflow: hidden;
+  height:100%;
+background-image: url(background-3.jpg);
+background-size:100% 100%;
+display:flex;
+flex-wrap: wrap;
+align-content: center;
+justify-content: center;}
+img[g11]{grid-area: g11;height:`+j200+`px ;width:`+j40+`px ;}
+img[g12]{grid-area: g12;height:`+j200+`px ;width:`+j40+`px ;}
+img[g13]{grid-area: g13;height:`+j200+`px ;width:`+j40+`px ;}
+img[g14]{grid-area: g14;height:`+j200+`px ;width:`+j40+`px ;}
+img[g15]{grid-area: g15;height:`+j200+`px ;width:`+j40+`px ;}
+img[g16]{grid-area: g16;height:`+j200+`px ;width:`+j40+`px ;}
+img[g21]{grid-area: g21;height: `+j40+`px;width: `+j200+`px;}
+img[g22]{grid-area: g22;height: `+j40+`px;width: `+j200+`px;}
+img[g23]{grid-area: g23;height: `+j40+`px;width: `+j200+`px;}
+img[g24]{grid-area: g24;height: `+j40+`px;width: `+j200+`px;}
+img[g25]{grid-area: g25;height: `+j40+`px;width: `+j200+`px;}
+img[g26]{grid-area: g26;height: `+j40+`px;width: `+j200+`px;}
+img[g31]{grid-area: g31;height: `+j40+`px;width: `+j40+`px;}
+img[g32]{grid-area: g32;height: `+j40+`px;width: `+j40+`px;}
+img[g33]{grid-area: g33;height: `+j40+`px;width: `+j40+`px;}
+img[g34]{grid-area: g34;height: `+j40+`px;width: `+j40+`px;}
+div[g41]{grid-area: g41;}
+div[g42]{grid-area: g42;}
+div[g43]{grid-area: g43;}
+div[g44]{grid-area: g44;}
+div[g45]{grid-area: g45;}
+div[g46]{grid-area: g46;}
+div[g47]{grid-area: g47;}
+div[g48]{grid-area: g48;}
+div[g49]{grid-area: g49;}
+img[g51]{grid-area: g51;height: `+j40+`px;width: `+j40+`px;}
+img[g52]{grid-area: g52;height: `+j40+`px;width: `+j40+`px;}
+img[g53]{grid-area: g53;height: `+j40+`px;width: `+j40+`px;}
+img[g54]{grid-area: g54;height: `+j40+`px;width: `+j40+`px;}
+img[g01]{grid-area: g01;height: `+j680+`px;width: `+j40+`px;}
+img[g02]{grid-area: g02;height: `+j680+`px;width: `+j40+`px;}
+img[g03]{grid-area: g03;height: `+j40+`px;width: `+j680+`px;}
+img[g04]{grid-area: g04;height: `+j40+`px;width: `+j680+`px;}
+div[gh1]{grid-area: gh1;}
+div[gh3]{grid-area: gh3;}
+[gh1],[gh3]{
+    
+    height: `+(j200*3+j40*2)+`;
+    }
+.cdiv{z-index: 1;}
+.cdiv>img{
+  height: `+j200+`px;
+  width: `+j200+`px;
+  }
+  img{user-select: none;}
+.cdiv>div{
+  display: inline-block;
+  position: absolute;
+  z-index: 2;}
+  .cbu{
+    font-size:`+jfont+`px;
+    display:flex;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: center;
+    grid-area: g00;
+    direction: rtl;;
+  }
+  
+#mo{
+  display:inline-grid;
+  grid: 'gh3 g51 g03 g03 g03 g03 g03 g52 gh1'
+        'gh3 g01 g41 g11 g42 g12 g43 g02 gh1'
+        'gh3 g01 g21 g31 g22 g32 g23 g02 gh1'
+        'gh3 g01 g44 g13 g45 g14 g46 g02 gh1'
+        'gh3 g01 g24 g33 g25 g34 g26 g02 gh1'
+        'gh3 g01 g47 g15 g48 g16 g49 g02 gh1'
+        'gh3 g53 g04 g04 g04 g04 g04 g54 gh1'
+        'g00 g00 g00 g00 g00 g00 g00 g00 g00'
+  ;}`;
+  
+document.getElementsByTagName("style")[0].innerHTML=jcss;
+$(".cdiv").children("div").children("img").css({"height":j200+"px"});
+$(".cdiv").children("div").children("img").css({"width":j200+"px"});
+jgx=document.createElement("img");
+jgx.src="x.png";
+jgo=document.createElement("img");
+jgo.src="o.png";
+jgx.style.width=j200+"px";
+jgx.style.height=j200+"px";
+jgo.style.width=j200+"px";
+jgo.style.height=j200+"px";
+jgx.draggable=false;
+jgo.draggable=false;
+jgx.className = "qrr";
+jgo.className = "qrr";
+jgo=jgo.outerHTML;
+jgx=jgx.outerHTML;
+}
+fview();
+document.body.onresize=function(){fview();};
+function fzx1(){
+  document.getElementsByClassName("y1")[0].style.backgroundColor="transparent";
+  document.getElementsByClassName("y2")[0].style.backgroundColor="transparent";
+  document.getElementsByClassName("y3")[0].style.backgroundColor="transparent";
+  jplay=0;jx=0;jo=0;jequ=0;
+  i=0;jxo=0;$(".cxo").html(jxo);
+  while(document.getElementsByTagName("div").length>i){
+    if(document.getElementsByTagName("div")[i].innerHTML==""){
+      document.getElementsByTagName("div")[i].innerHTML=" ";
+    }
+    i++;
+  }
+  $(".cplay").html(jplay);
+  $(".cequ").html(jequ);
+  $(".cx").html(jx);
+  $(".co").html(jo);
+    $(".cdiv").children("div").html("");
+    $(".cdiv").children("div").css({"background":"rgba(0, 0, 255, 0)"});
+    
+if(document.getElementById("opp1").checked){
+  document.getElementsByClassName("y1")[0].style.backgroundColor="yellow";}
+
+  if(document.getElementById("opp2").checked){
+  document.getElementsByClassName("y2")[0].style.backgroundColor="yellow";}
+
+  if(document.getElementById("opp3").checked){
+  document.getElementsByClassName("y3")[0].style.backgroundColor="yellow";}
+  fzx();
+}
+function fzx(){
+  document.getElementsByClassName("w1")[0].style.backgroundColor="transparent";
+  document.getElementsByClassName("w2")[0].style.backgroundColor="transparent";
+  document.getElementsByClassName("w3")[0].style.backgroundColor="transparent";
+  if(jxo==0||jxo==1){
+  i=0;jxo=0;$(".cxo").html(jxo);
+  while(document.getElementsByTagName("div").length>i){
+    if(document.getElementsByTagName("div")[i].innerHTML==""){
+      document.getElementsByTagName("div")[i].innerHTML=" ";
+    }
+    i++;
+  }
+  $(".cplay").html(jplay);
+  $(".cequ").html(jequ);
+  $(".cx").html(jx);
+  $(".co").html(jo);
+    $(".cdiv").children("div").html("");
+    $(".cdiv").children("div").css({"background":"rgba(0, 0, 255, 0)"});
+    if(document.getElementById("op2").checked){
+  jpen=jgo;
+  jcl=1;
+  fpro();
+  }
+  }
+  if(document.getElementById("op1").checked){
+    document.getElementsByClassName("w1")[0].style.backgroundColor="yellow";}
+
+if(document.getElementById("op2").checked){
+  document.getElementsByClassName("w2")[0].style.backgroundColor="yellow";
+  }
+
+if(document.getElementById("op3").checked){
+    document.getElementsByClassName("w3")[0].style.backgroundColor="yellow";}
+}
+</script>
+
+<div id=mo draggable="false">
+  <div gh1 draggable="false"><br><br>
+    <label draggable="false">
+      <input type="radio" hidden oninput="fzx()" name="options" id="op1"  draggable="false" value="1"><div  class="we w1"><i>X</i> أولاً</div>
+    </label><br><br><br>
+    <label draggable="false">
+      <input type="radio" name="options" oninput="fzx()" id="op2"  draggable="false" hidden value="2"><div class="we w2"><i>O</i> أولاً</div> 
+    </label><br><br><br>
+    <label  draggable="false">
+      <input type="radio" name="options" oninput="fzx()" id="op3"  draggable="false" hidden value="3" checked> <div class="we w3">بالتبادل</div> 
+    </label>
+  </div>
+
+  <div gh3 draggable="false"><br><br>
+
+    <label draggable="false">
+      <input type="radio" hidden oninput="fzx1()" name="optio" id="opp1"  draggable="false" value="1"><div  class="we y1">عشوائى</div>
+    </label><br><br><br>
+    <label draggable="false">
+      <input type="radio" name="optio" oninput="fzx1()" id="opp2"  draggable="false" hidden value="2"><div class="we y2">متوسط</div> 
+    </label><br><br><br>
+    <label  draggable="false">
+      <input type="radio" name="optio" oninput="fzx1()" id="opp3"  draggable="false" hidden value="3" checked> <div class="we y3">صعب</div> 
+    </label>
+  </div>
+
+<img class="qrr" draggable="false" src="col1_wood.png" g11><img class="qrr" draggable="false" src="col1_wood.png" g12><img class="qrr" draggable="false" src="col1_wood.png" g13><img class="qrr" draggable="false" src="col1_wood.png" g14><img class="qrr" draggable="false" src="col1_wood.png" g15><img class="qrr" draggable="false" src="col1_wood.png" g16>
+<img class="qrr" draggable="false" src="col_wood.png" g21><img class="qrr" draggable="false" src="col_wood.png" g22><img class="qrr" draggable="false" src="col_wood.png" g23><img class="qrr" draggable="false" src="col_wood.png" g24><img class="qrr" draggable="false" src="col_wood.png" g25><img class="qrr" draggable="false" src="col_wood.png" g26>
+<img class="qrr" draggable="false" src="ang_wood.jpg" g31><img class="qrr" draggable="false" src="ang_wood.jpg" g32><img class="qrr" draggable="false" src="ang_wood.jpg" g33><img class="qrr" draggable="false" src="ang_wood.jpg" g34>
+<div g41 class="cdiv cbox1"><div></div><img class="qrr" draggable="false" src="wood.jpg"></div>
+<div g42 class="cdiv cbox2"><div></div><img class="qrr" draggable="false" src="wood.jpg"></div>
+<div g43 class="cdiv cbox3"><div></div><img class="qrr" draggable="false" src="wood.jpg"></div>
+<div g44 class="cdiv cbox4"><div></div><img class="qrr" draggable="false" src="wood.jpg"></div>
+<div g45 class="cdiv cbox5"><div></div><img class="qrr" draggable="false" src="wood.jpg"></div>
+<div g46 class="cdiv cbox6"><div></div><img class="qrr" draggable="false" src="wood.jpg"></div>
+<div g47 class="cdiv cbox7"><div></div><img class="qrr" draggable="false" src="wood.jpg"></div>
+<div g48 class="cdiv cbox8"><div></div><img class="qrr" draggable="false" src="wood.jpg"></div>
+<div g49 class="cdiv cbox9"><div></div><img class="qrr" draggable="false" src="wood.jpg"></div><div></div><img class="qrr" draggable="false" src="fang.png" g51><div></div><img class="qrr" draggable="false" src="fang2.png" g52><div></div><img class="qrr" draggable="false" src="fang4.png" g53><div></div><img class="qrr" draggable="false" src="fang3.png" g54>
+<img class="qrr" draggable="false" src="f1_wood.png" g01><img class="qrr" draggable="false" src="f1_wood.png" g02>
+<img class="qrr" draggable="false" src="f_wood.png" g03><img class="qrr" draggable="false" src="f_wood.png" g04>
+
+<p id=pp11></p>
+<div class="cend"></div>
+<div class="cbu">
+  <!--<button class="czero">إعادة الضبط</button>
+  &nbsp;&nbsp;&nbsp;
+  <button class="creset">إعادة الدور</button>
+  &nbsp;&nbsp;&nbsp;
+  <div>بتلاعب الكمبيوتر</div>
+  <div><input type="radio" class="ccheck2" name="xxname">اثنان بيلعبوا بعض</div>--><input type="hidden"  class="ccheck1" checked name="xxname">
+  <div>الادوار</div>:<div class="cplay"></div>
+  &nbsp;&nbsp;&nbsp;
+  <div>التعادل</div>:<div class="cequ"></div>
+  &nbsp;&nbsp;&nbsp;
+  <div><i><b>X</b></i></div>:<div class="cx"></div>
+  &nbsp;&nbsp;&nbsp;
+  <div><i><b>O</b></i></div>:<div class="co"></div></div>
+  <!--<div class="cxo"></div>-->
+</div>
+<script>//document.body.style.background="yellow";
+ $("*").attr("draggable","false");
+ $("*").css("userSelect","none");
+ $("img").ondragstart=function(){"return false;"};
+jgx=document.createElement("img");
+jgx.src="x.png";
+jgx.style.width=j200+"px";
+jgx.style.height=j200+"px";
+jgx.draggable=false;
+jgo=document.createElement("img");
+jgo.src="o.png";
+jgo.style.width=j200+"px";
+jgo.style.height=j200+"px";
+jgo.draggable=false;
+jgx.className = "qrr";
+jgo.className = "qrr";
+jgo=jgo.outerHTML;
+jgx=jgx.outerHTML;
+
+jx=0;
+jo=0;
+jplay=0;//عدد الادوار
+jequ=0;//التعادل
+jxo=0;//رقم اللى عليه الدور
+$(".cplay").html(jplay);
+$(".cequ").html(jequ);
+$(".cx").html(jx);
+$(".co").html(jo);
+jpen=jgx;
+
+
+
+
+function fpro(){//العملية
+  xthis="اي قيمة مؤقتا";
+  while($(xthis).children("div").html()!=""){
+    //لو تم الكتابة فى الكل
+    if($(".cbox1").children("div").html()&&$(".cbox2").children("div").html()&&$(".cbox3").children("div").html()&&$(".cbox4").children("div").html()&&$(".cbox5").children("div").html()&&$(".cbox6").children("div").html()&&$(".cbox7").children("div").html()&&$(".cbox8").children("div").html()&&$(".cbox9").children("div").html() != "" ){break;}
+
+    else if(document.getElementById("opp2").checked||document.getElementById("opp3").checked){
+    //لو وجد فرصة للمكسب
+    if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==jgo&&$(".cbox3").children("div").html()==jgo){xthis=".cbox1";break;}
+    else if($(".cbox1").children("div").html()==jgo&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==jgo){xthis=".cbox2";break;}
+    else if($(".cbox1").children("div").html()==jgo&&$(".cbox2").children("div").html()==jgo&&$(".cbox3").children("div").html()==""){xthis=".cbox3";break;}
+    else if($(".cbox4").children("div").html()==""&&$(".cbox5").children("div").html()==jgo&&$(".cbox6").children("div").html()==jgo){xthis=".cbox4";break;}
+    else if($(".cbox4").children("div").html()==jgo&&$(".cbox5").children("div").html()==""&&$(".cbox6").children("div").html()==jgo){xthis=".cbox5";break;}
+    else if($(".cbox4").children("div").html()==jgo&&$(".cbox5").children("div").html()==jgo&&$(".cbox6").children("div").html()==""){xthis=".cbox6";break;}
+    else if($(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==jgo&&$(".cbox9").children("div").html()==jgo){xthis=".cbox7";break;}
+    else if($(".cbox7").children("div").html()==jgo&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==jgo){xthis=".cbox8";break;}
+    else if($(".cbox7").children("div").html()==jgo&&$(".cbox8").children("div").html()==jgo&&$(".cbox9").children("div").html()==""){xthis=".cbox9";break;}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox4").children("div").html()==jgo&&$(".cbox7").children("div").html()==jgo){xthis=".cbox1";break;}
+    else if($(".cbox1").children("div").html()==jgo&&$(".cbox4").children("div").html()==""&&$(".cbox7").children("div").html()==jgo){xthis=".cbox4";break;}
+    else if($(".cbox1").children("div").html()==jgo&&$(".cbox4").children("div").html()==jgo&&$(".cbox7").children("div").html()==""){xthis=".cbox7";break;}
+    else if($(".cbox2").children("div").html()==""&&$(".cbox5").children("div").html()==jgo&&$(".cbox8").children("div").html()==jgo){xthis=".cbox2";break;}
+    else if($(".cbox2").children("div").html()==jgo&&$(".cbox5").children("div").html()==""&&$(".cbox8").children("div").html()==jgo){xthis=".cbox5";break;}
+    else if($(".cbox2").children("div").html()==jgo&&$(".cbox5").children("div").html()==jgo&&$(".cbox8").children("div").html()==""){xthis=".cbox8";break;}
+    else if($(".cbox3").children("div").html()==""&&$(".cbox6").children("div").html()==jgo&&$(".cbox9").children("div").html()==jgo){xthis=".cbox3";break;}
+    else if($(".cbox3").children("div").html()==jgo&&$(".cbox6").children("div").html()==""&&$(".cbox9").children("div").html()==jgo){xthis=".cbox6";break;}
+    else if($(".cbox3").children("div").html()==jgo&&$(".cbox6").children("div").html()==jgo&&$(".cbox9").children("div").html()==""){xthis=".cbox9";break;}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox5").children("div").html()==jgo&&$(".cbox9").children("div").html()==jgo){xthis=".cbox1";break;}
+    else if($(".cbox1").children("div").html()==jgo&&$(".cbox5").children("div").html()==""&&$(".cbox9").children("div").html()==jgo){xthis=".cbox5";break;}
+    else if($(".cbox1").children("div").html()==jgo&&$(".cbox5").children("div").html()==jgo&&$(".cbox9").children("div").html()==""){xthis=".cbox9";break;}
+    else if($(".cbox3").children("div").html()==""&&$(".cbox5").children("div").html()==jgo&&$(".cbox7").children("div").html()==jgo){xthis=".cbox3";break;}
+    else if($(".cbox3").children("div").html()==jgo&&$(".cbox5").children("div").html()==""&&$(".cbox7").children("div").html()==jgo){xthis=".cbox5";break;}
+    else if($(".cbox3").children("div").html()==jgo&&$(".cbox5").children("div").html()==jgo&&$(".cbox7").children("div").html()==""){xthis=".cbox7";break;}
+    //تعطيل فرصة مكسب
+    else if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==jgx&&$(".cbox3").children("div").html()==jgx){xthis=".cbox1";break;}
+    else if($(".cbox1").children("div").html()==jgx&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==jgx){xthis=".cbox2";break;}
+    else if($(".cbox1").children("div").html()==jgx&&$(".cbox2").children("div").html()==jgx&&$(".cbox3").children("div").html()==""){xthis=".cbox3";break;}
+    else if($(".cbox4").children("div").html()==""&&$(".cbox5").children("div").html()==jgx&&$(".cbox6").children("div").html()==jgx){xthis=".cbox4";break;}
+    else if($(".cbox4").children("div").html()==jgx&&$(".cbox5").children("div").html()==""&&$(".cbox6").children("div").html()==jgx){xthis=".cbox5";break;}
+    else if($(".cbox4").children("div").html()==jgx&&$(".cbox5").children("div").html()==jgx&&$(".cbox6").children("div").html()==""){xthis=".cbox6";break;}
+    else if($(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==jgx&&$(".cbox9").children("div").html()==jgx){xthis=".cbox7";break;}
+    else if($(".cbox7").children("div").html()==jgx&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==jgx){xthis=".cbox8";break;}
+    else if($(".cbox7").children("div").html()==jgx&&$(".cbox8").children("div").html()==jgx&&$(".cbox9").children("div").html()==""){xthis=".cbox9";break;}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox4").children("div").html()==jgx&&$(".cbox7").children("div").html()==jgx){xthis=".cbox1";break;}
+    else if($(".cbox1").children("div").html()==jgx&&$(".cbox4").children("div").html()==""&&$(".cbox7").children("div").html()==jgx){xthis=".cbox4";break;}
+    else if($(".cbox1").children("div").html()==jgx&&$(".cbox4").children("div").html()==jgx&&$(".cbox7").children("div").html()==""){xthis=".cbox7";break;}
+    else if($(".cbox2").children("div").html()==""&&$(".cbox5").children("div").html()==jgx&&$(".cbox8").children("div").html()==jgx){xthis=".cbox2";break;}
+    else if($(".cbox2").children("div").html()==jgx&&$(".cbox5").children("div").html()==""&&$(".cbox8").children("div").html()==jgx){xthis=".cbox5";break;}
+    else if($(".cbox2").children("div").html()==jgx&&$(".cbox5").children("div").html()==jgx&&$(".cbox8").children("div").html()==""){xthis=".cbox8";break;}
+    else if($(".cbox3").children("div").html()==""&&$(".cbox6").children("div").html()==jgx&&$(".cbox9").children("div").html()==jgx){xthis=".cbox3";break;}
+    else if($(".cbox3").children("div").html()==jgx&&$(".cbox6").children("div").html()==""&&$(".cbox9").children("div").html()==jgx){xthis=".cbox6";break;}
+    else if($(".cbox3").children("div").html()==jgx&&$(".cbox6").children("div").html()==jgx&&$(".cbox9").children("div").html()==""){xthis=".cbox9";break;}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox5").children("div").html()==jgx&&$(".cbox9").children("div").html()==jgx){xthis=".cbox1";break;}
+    else if($(".cbox1").children("div").html()==jgx&&$(".cbox5").children("div").html()==""&&$(".cbox9").children("div").html()==jgx){xthis=".cbox5";break;}
+    else if($(".cbox1").children("div").html()==jgx&&$(".cbox5").children("div").html()==jgx&&$(".cbox9").children("div").html()==""){xthis=".cbox9";break;}
+    else if($(".cbox3").children("div").html()==""&&$(".cbox5").children("div").html()==jgx&&$(".cbox7").children("div").html()==jgx){xthis=".cbox3";break;}
+    else if($(".cbox3").children("div").html()==jgx&&$(".cbox5").children("div").html()==""&&$(".cbox7").children("div").html()==jgx){xthis=".cbox5";break;}
+    else if($(".cbox3").children("div").html()==jgx&&$(".cbox5").children("div").html()==jgx&&$(".cbox7").children("div").html()==""){xthis=".cbox7";break;}
+
+    else if(document.getElementById("opp3").checked){
+    //لعب البداية فى المنتصف
+    if($(".cbox5").children("div").html()==jgx&&$(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==""&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==""){frand(2);break;}
+    else if($(".cbox5").children("div").html()==jgx&&$(".cbox1").children("div").html()==jgx&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==""&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==jgo){frand(2);}
+    else if($(".cbox5").children("div").html()==jgx&&$(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==jgx&&$(".cbox4").children("div").html()==""&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==jgo&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==""){frand(2);}
+    else if($(".cbox5").children("div").html()==jgx&&$(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==jgo&&$(".cbox4").children("div").html()==""&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==jgx&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==""){frand(2);}
+    else if($(".cbox5").children("div").html()==jgx&&$(".cbox1").children("div").html()==jgo&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==""&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==jgx){frand(2);}
+    //لعب البداية من الطرف
+    else if($(".cbox1").children("div").html()==jgx&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==""&&$(".cbox5").children("div").html()==""&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==""){frand(1);}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==jgx&&$(".cbox4").children("div").html()==""&&$(".cbox5").children("div").html()==""&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==""){frand(1);}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==""&&$(".cbox5").children("div").html()==""&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==jgx&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==""){frand(1);}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==""&&$(".cbox5").children("div").html()==""&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==jgx){frand(1);}
+//xox cut
+    else if($(".cbox1").children("div").html()==jgx&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==""&&$(".cbox5").children("div").html()==jgo&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==jgx){frand(3);}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==jgx&&$(".cbox4").children("div").html()==""&&$(".cbox5").children("div").html()==jgo&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==jgx&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==""){frand(3);}
+    //لعب من البداية من الجانب
+    else if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==jgx&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==""&&$(".cbox5").children("div").html()==""&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==""){frandx(8);}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==jgx&&$(".cbox5").children("div").html()==""&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==""){frandx(6);}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==""&&$(".cbox5").children("div").html()==""&&$(".cbox6").children("div").html()==jgx&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==""){frandx(4);}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==""&&$(".cbox5").children("div").html()==""&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==jgx&&$(".cbox9").children("div").html()==""){frandx(2);}
+
+    else if((jxo==3||jxo==4)&&$(".cbox2").children("div").html()==jgx&&$(".cbox4").children("div").html()==jgx&&$(".cbox1").children("div").html()==""){xthis=".cbox1";break;}
+    else if((jxo==3||jxo==4)&&$(".cbox2").children("div").html()==jgx&&$(".cbox6").children("div").html()==jgx&&$(".cbox3").children("div").html()==""){xthis=".cbox3";break;}
+    else if((jxo==3||jxo==4)&&$(".cbox4").children("div").html()==jgx&&$(".cbox8").children("div").html()==jgx&&$(".cbox7").children("div").html()==""){xthis=".cbox7";break;}
+    else if((jxo==3||jxo==4)&&$(".cbox6").children("div").html()==jgx&&$(".cbox8").children("div").html()==jgx&&$(".cbox9").children("div").html()==""){xthis=".cbox9";break;}
+
+    else if((jxo==3||jxo==4)&&$(".cbox2").children("div").html()==jgx&&$(".cbox7").children("div").html()==jgx&&$(".cbox1").children("div").html()==""){xthis=".cbox1";break;}
+    else if((jxo==3||jxo==4)&&$(".cbox2").children("div").html()==jgx&&$(".cbox9").children("div").html()==jgx&&$(".cbox3").children("div").html()==""){xthis=".cbox3";break;}
+    else if((jxo==3||jxo==4)&&$(".cbox1").children("div").html()==jgx&&$(".cbox8").children("div").html()==jgx&&$(".cbox7").children("div").html()==""){xthis=".cbox7";break;}
+    else if((jxo==3||jxo==4)&&$(".cbox3").children("div").html()==jgx&&$(".cbox8").children("div").html()==jgx&&$(".cbox9").children("div").html()==""){xthis=".cbox9";break;}
+    //+
+    else if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==jgx&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==""&&$(".cbox5").children("div").html()==jgx&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==jgo&&$(".cbox9").children("div").html()==""){frand(2);}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==jgo&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==""&&$(".cbox5").children("div").html()==jgx&&$(".cbox6").children("div").html()==""&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==jgx&&$(".cbox9").children("div").html()==""){frand(2);}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==jgx&&$(".cbox5").children("div").html()==jgx&&$(".cbox6").children("div").html()==jgo&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==""){frand(2);}
+    else if($(".cbox1").children("div").html()==""&&$(".cbox2").children("div").html()==""&&$(".cbox3").children("div").html()==""&&$(".cbox4").children("div").html()==jgo&&$(".cbox5").children("div").html()==jgx&&$(".cbox6").children("div").html()==jgx&&$(".cbox7").children("div").html()==""&&$(".cbox8").children("div").html()==""&&$(".cbox9").children("div").html()==""){frand(2);}
+//O أولا
+else if(jxo==4&&$(".cbox5").children("div").html()==""){frand(1);}
+else if(jxo==2&&($(".cbox2").children("div").html()==jgo||$(".cbox4").children("div").html()==jgo||$(".cbox6").children("div").html()==jgo||$(".cbox8").children("div").html()==jgo)){frandx();}
+
+
+
+
+else{
+      frand();
+  }
+}
+    else{
+      frand();
+  }
+  }else{
+      frand();
+  }
+  }fwr();
+}
+
+function frandx(xnn){
+  if(xnn==undefined){
+      let x=1;
+      let y=4;
+      let xx=Math.random();
+      var ranc = Math.floor((xx * (y - x + 1)) + x);
+      if(ranc==1){xnn="1";}
+      if(ranc==2){xnn="3";}
+      if(ranc==3){xnn="7";}
+      if(ranc==4){xnn="9";}
+    }
+
+  let x=1;
+    let y=2;
+    let xx=Math.random();
+    ranb = Math.floor((xx * (y - x + 1)) + x);
+    if(ranb==1){
+      xthis=".cbox5";
+}
+if(ranb==2){
+      xthis=".cbox"+xnn;
+}
+}
+
+function frand(ranb){
+  if(ranb==undefined){
+    let x=1;
+    let y=3;
+    let xx=Math.random();
+    ranb = Math.floor((xx * (y - x + 1)) + x);}
+    if(ranb==1){
+      xthis=".cbox5";
+    }
+    if(ranb==2){
+      let x=1;
+      let y=4;
+      let xx=Math.random();
+      var ranc = Math.floor((xx * (y - x + 1)) + x);
+      if(ranc==1){xthis=".cbox1";}
+      if(ranc==2){xthis=".cbox3";}
+      if(ranc==3){xthis=".cbox7";}
+      if(ranc==4){xthis=".cbox9";}
+    }
+    if(ranb==3){
+      let x=1;
+      let y=4;
+      let xx=Math.random();
+      var rant = Math.floor((xx * (y - x + 1)) + x);
+      if(rant==1){xthis=".cbox2";}
+      if(rant==2){xthis=".cbox4";}
+      if(rant==3){xthis=".cbox6";}
+      if(rant==4){xthis=".cbox8";}
+    }
+    }
+
+function fwrend(){
+  if(jand==0){
+    jand=1;
+  }else{
+    jand=0;
+  }
+ 
+
+
+  i=0;jxo=0;$(".cxo").html(jxo);
+  while(document.getElementsByTagName("div").length>i){
+    if(document.getElementsByTagName("div")[i].innerHTML==""){
+      document.getElementsByTagName("div")[i].innerHTML=" ";
+    }
+    i++;
+  }
+  
+
+  $(".cplay").html(jplay);
+  $(".cequ").html(jequ);
+  $(".cx").html(jx);
+  $(".co").html(jo);
+  $(".cend").fadeIn(300).fadeTo(1000,1,function(){
+    $(".cdiv").children("div").html("");
+    $(".cdiv").children("div").css({"background":"rgba(0, 0, 255, 0)"});
+    iq=0;
+    while (document.getElementsByTagName("img").length>iq) {
+    document.getElementsByTagName("img")[iq].removeAttribute("class");
+  document.getElementsByTagName("img")[iq].offsetTop;
+    iq++;
+  }
+  $("img").attr("class","qrr");
+    if(document.getElementById("op2").checked){
+      jpen=jgo;
+      jcl=1;
+      fpro();
+      
+  }
+  if(document.getElementById("op3").checked){
+    if(jand==1){
+      jpen=jgo;
+      jcl=1;
+      fpro();
+  }}
+
+    }).fadeOut(300);
+    
+
+
+
+}
+
+function ftest(){//تجربة
+  if($(".cbox1").children("div").html()==jgx&&$(".cbox2").children("div").html()==jgx&&$(".cbox3").children("div").html()==jgx){
+    $(".cbox1").children("div").css({"background":"yellow"})
+    $(".cbox2").children("div").css({"background":"yellow"})
+    $(".cbox3").children("div").css({"background":"yellow"})
+    jx=jx+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox4").children("div").html()==jgx&&$(".cbox5").children("div").html()==jgx&&$(".cbox6").children("div").html()==jgx){
+    $(".cbox4").children("div").css({"background":"yellow"})
+    $(".cbox5").children("div").css({"background":"yellow"})
+    $(".cbox6").children("div").css({"background":"yellow"})
+    jx=jx+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox7").children("div").html()==jgx&&$(".cbox8").children("div").html()==jgx&&$(".cbox9").children("div").html()==jgx){
+    $(".cbox7").children("div").css({"background":"yellow"})
+    $(".cbox8").children("div").css({"background":"yellow"})
+    $(".cbox9").children("div").css({"background":"yellow"})
+    jx=jx+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox1").children("div").html()==jgx&&$(".cbox4").children("div").html()==jgx&&$(".cbox7").children("div").html()==jgx){
+    $(".cbox1").children("div").css({"background":"yellow"})
+    $(".cbox4").children("div").css({"background":"yellow"})
+    $(".cbox7").children("div").css({"background":"yellow"})
+    jx=jx+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox2").children("div").html()==jgx&&$(".cbox5").children("div").html()==jgx&&$(".cbox8").children("div").html()==jgx){
+    $(".cbox2").children("div").css({"background":"yellow"})
+    $(".cbox5").children("div").css({"background":"yellow"})
+    $(".cbox8").children("div").css({"background":"yellow"})
+    jx=jx+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox3").children("div").html()==jgx&&$(".cbox6").children("div").html()==jgx&&$(".cbox9").children("div").html()==jgx){
+    $(".cbox3").children("div").css({"background":"yellow"})
+    $(".cbox6").children("div").css({"background":"yellow"})
+    $(".cbox9").children("div").css({"background":"yellow"})
+    jx=jx+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox1").children("div").html()==jgx&&$(".cbox5").children("div").html()==jgx&&$(".cbox9").children("div").html()==jgx){
+    $(".cbox1").children("div").css({"background":"yellow"})
+    $(".cbox5").children("div").css({"background":"yellow"})
+    $(".cbox9").children("div").css({"background":"yellow"})
+    jx=jx+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox3").children("div").html()==jgx&&$(".cbox5").children("div").html()==jgx&&$(".cbox7").children("div").html()==jgx){
+    $(".cbox3").children("div").css({"background":"yellow"})
+    $(".cbox5").children("div").css({"background":"yellow"})
+    $(".cbox7").children("div").css({"background":"yellow"})
+    jx=jx+1;jplay=jplay+1;fwrend();
+  }else if
+    ($(".cbox1").children("div").html()==jgo&&$(".cbox2").children("div").html()==jgo&&$(".cbox3").children("div").html()==jgo){
+    $(".cbox1").children("div").css({"background":"yellow"})
+    $(".cbox2").children("div").css({"background":"yellow"})
+    $(".cbox3").children("div").css({"background":"yellow"})
+    jo=jo+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox4").children("div").html()==jgo&&$(".cbox5").children("div").html()==jgo&&$(".cbox6").children("div").html()==jgo){
+    $(".cbox4").children("div").css({"background":"yellow"})
+    $(".cbox5").children("div").css({"background":"yellow"})
+    $(".cbox6").children("div").css({"background":"yellow"})
+    jo=jo+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox7").children("div").html()==jgo&&$(".cbox8").children("div").html()==jgo&&$(".cbox9").children("div").html()==jgo){
+    $(".cbox7").children("div").css({"background":"yellow"})
+    $(".cbox8").children("div").css({"background":"yellow"})
+    $(".cbox9").children("div").css({"background":"yellow"})
+    jo=jo+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox1").children("div").html()==jgo&&$(".cbox4").children("div").html()==jgo&&$(".cbox7").children("div").html()==jgo){
+    $(".cbox1").children("div").css({"background":"yellow"})
+    $(".cbox4").children("div").css({"background":"yellow"})
+    $(".cbox7").children("div").css({"background":"yellow"})
+    jo=jo+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox2").children("div").html()==jgo&&$(".cbox5").children("div").html()==jgo&&$(".cbox8").children("div").html()==jgo){
+    $(".cbox2").children("div").css({"background":"yellow"})
+    $(".cbox5").children("div").css({"background":"yellow"})
+    $(".cbox8").children("div").css({"background":"yellow"})
+    jo=jo+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox3").children("div").html()==jgo&&$(".cbox6").children("div").html()==jgo&&$(".cbox9").children("div").html()==jgo){
+    $(".cbox3").children("div").css({"background":"yellow"})
+    $(".cbox6").children("div").css({"background":"yellow"})
+    $(".cbox9").children("div").css({"background":"yellow"})
+    jo=jo+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox1").children("div").html()==jgo&&$(".cbox5").children("div").html()==jgo&&$(".cbox9").children("div").html()==jgo){
+    $(".cbox1").children("div").css({"background":"yellow"})
+    $(".cbox5").children("div").css({"background":"yellow"})
+    $(".cbox9").children("div").css({"background":"yellow"})
+    jo=jo+1;jplay=jplay+1;fwrend();
+  }else if
+  ($(".cbox3").children("div").html()==jgo&&$(".cbox5").children("div").html()==jgo&&$(".cbox7").children("div").html()==jgo){
+    $(".cbox3").children("div").css({"background":"yellow"})
+    $(".cbox5").children("div").css({"background":"yellow"})
+    $(".cbox7").children("div").css({"background":"yellow"})
+    jo=jo+1;jplay=jplay+1;fwrend();
+  }else if($(".cbox1").children("div").html()&&$(".cbox2").children("div").html()&&$(".cbox3").children("div").html()&&$(".cbox4").children("div").html()&&$(".cbox5").children("div").html()&&$(".cbox6").children("div").html()&&$(".cbox7").children("div").html()&&$(".cbox8").children("div").html()&&$(".cbox9").children("div").html() != "" ){
+    jequ=jequ+1;
+    jplay=jplay+1;
+    fwrend();
+  }else{
+      if(jcl==0){
+        jcl=1;
+        fpro();
+    }
+  }
+}
+
+function fwr(){//كتابة x او o
+  if($(xthis).children("div").html()==""){
+    $(xthis).children("div").html(jpen);
+    jxo=jxo+1;
+    $(".cxo").html(jxo);
+    if(jpen==jgo){
+      jpen=jgx;
+    }else{
+      jpen=jgo;
+    }
+  }
+  ftest();
+}
+//end class
+$(document).ready(function(){
+$(".cdiv").click(function(){
+  if($(this).children("div").html()==""){
+  jpen=jgx;
+  jcl=0;
+  xthis=this;
+  fwr();
+  }
+});
+$(".creset").click(function(){
+  $(".cdiv").children("div").html("");
+  $(".cend").fadeOut();
+});
+$(".czero").click(function(){
+  $(".cdiv").children("div").html("");
+  $(".cend").fadeOut();
+  jx=0;
+  jo=0;
+  jxo=0;
+  $(".cxo").html(jxo);
+  $(".csco").html("x: "+jx+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; o: "+jo);
+});
+});
+fzx()
+fzx1()
+jand=0;
+document.getElementsByTagName("body")[0].onresize=function(){fview();}
+</script>
+</body>
+<script>
+  setTimeout(() => {
+window.onresize();
+  }, 1000);
+</script>
