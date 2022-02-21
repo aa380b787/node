@@ -697,7 +697,7 @@ footer i {
 }
 
 #father_article img {
-  width: 100%;
+  width: calc(var(--w) * 80);
 }
 
 #father_article {
