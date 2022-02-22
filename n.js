@@ -2,8 +2,24 @@ var http = require('http');
 var url = require('url');
 var fs = require('fs');
 
+var admin = require("firebase-admin");
+var serviceAccount = require("./key.json");
+
+admin.initializeApp({
+credential: admin.credential.cert(serviceAccount),
+databaseURL: "https://ppoo-8be96.firebaseio.com",
+authDomain: "ppoo-8be96.firebaseapp.com",
+});
 http.createServer(function (req, res) {
   var q = url.parse(req.url, true);
+  if (q.pathname=="/test/") {
+    //admin.database().ref("mmm").once('value',function(snap){snap.val().toString()//admin.firestore().collection('m1').get().then(function(v){
+      admin.firestore().collection("m1").get().then(function(snap){
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    res.write(JSON.stringify(snap.docs.map(doc => doc.data())));
+    res.end();
+      })
+  }else{
   if (req.method == "POST") {
     req.on('data', function (v) {
       var post = JSON.parse('{"' + decodeURIComponent(v).replaceAll("+", " ").replaceAll("&", '","').replaceAll("=", '":"') + '"}');
@@ -29,5 +45,6 @@ http.createServer(function (req, res) {
       //console.log(q.pathname + " - " + filename + " - " + req.method)
       res.end();
     });
-  }
+  }}
+//}).listen(80);
 }).listen(process.env.PORT || 5000);

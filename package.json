@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/aa380b787/node/issues"
   },
-  "homepage": "https://github.com/aa380b787/node#readme"
+  "homepage": "https://github.com/aa380b787/node#readme",
+  "dependencies": {
+    "firebase-admin": "^10.0.2"
+  }
 }
