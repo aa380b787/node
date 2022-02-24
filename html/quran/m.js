@@ -181,7 +181,7 @@ x07253024=setInterval(() => {
     if(zrr!="x07263016"){
         ze("#jj").innerHTML=zrr;
         clearInterval(x07253024);}}, 1);*/
-zfrr    =function(x){zfopen(x);x04hg5300=setInterval(function(){if(zopen){xxcell="";xxrow=[];zrr=[];for(xxsemicolon of zopen){if(xxsemicolon==";"){xxrow.push(xxcell);xxcell="";}else if(xxsemicolon=="\n"){xxcell=xxcell.substring(0,xxcell.length-1);xxrow.push(xxcell);xxcell="";zrr.push(xxrow);xxrow=[];}else{xxcell=xxcell+xxsemicolon;}};clearInterval(x04hg5300);}},1)}
+zfrr    =function(x){zfopen(x);x04hg5300=setInterval(function(){if(zopen){xxcell="";xxrow=[];zrr=[];for(xxsemicolon of zopen){if(xxsemicolon==","){xxrow.push(xxcell);xxcell="";}else if(xxsemicolon=="\n"){xxcell=xxcell.substring(0,xxcell.length-1);xxrow.push(xxcell);xxcell="";zrr.push(xxrow);xxrow=[];}else{xxcell=xxcell+xxsemicolon;}};clearInterval(x04hg5300);}},1)}
 
 
 //open csv to array 2
