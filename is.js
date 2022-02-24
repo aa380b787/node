@@ -138,6 +138,6 @@ module.exports = class dt {
     return this.z(this.l_yearf) + "-" + this.z(this.l_mo) + "-" + this.z(this.l_day) + " " + this.z(this.l_h24) + ":" + this.z(this.l_mi) + ":" + this.z(this.l_se) + "." + this.z_mse(this.l_mse);
     }
     get l_now_short(){
-    return  this.z(this.l_year) + "-" + this.z(this.l_mo) + "-" + this.z(this.l_day) + " " + this.z(this.l_h24) + ":" + this.z(this.l_mi);
+    return  this.z(this.l_year) + "-" + this.z(this.l_mo) + "-" + this.z(this.l_day) + " " + this.z(this.l_h24) + ":" + this.z(this.l_mi) + ":" + this.z(this.l_se);
     }
   }
