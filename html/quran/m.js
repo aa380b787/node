@@ -193,6 +193,7 @@ x07253024=setInterval(() => {
     if(zrr2!="x07263016"){
         ze("#jj").innerHTML=zrr2;
         clearInterval(x07253024);}}, 1);*/
+        var zopen2;
 zfrr2    =function(x){zfopen2(x);x04hg53002=setInterval(function(){if(zopen2){xxcell2="";xxrow2=[];zrr2=[];for(xxsemicolon2 of zopen2){if(xxsemicolon2==";"){xxrow2.push(xxcell2);xxcell2="";}else if(xxsemicolon2=="\n"){xxcell2=xxcell2.substring(0,xxcell2.length-1);xxrow2.push(xxcell2);xxcell2="";zrr2.push(xxrow2);xxrow2=[];}else{xxcell2=xxcell2+xxsemicolon2;}};clearInterval(x04hg53002);}},1)}
 
 
