@@ -1,7 +1,6 @@
 module.exports = class dt {
     constructor() {
-      this.local = new Date().setHours();
-      this.date = this.local.setHours(this.local.getHours()+2);
+      this.date = new Date();
       this.xweekx = ["Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur"];
       this.xweekarx = ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
     }

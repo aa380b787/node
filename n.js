@@ -12,8 +12,9 @@ admin.initializeApp({
 http.createServer(function (req, res) {
   var db = admin.firestore();
   var realUrl = (req.encrypted ? 'https' : 'http') + '://' + req.headers.host + req.url;
-  let d = new dt();
   var q = url.parse(realUrl, true);//var q = url.parse(req.url, true);
+  let d =new dt();
+  if(q.hostname.toString()=="eg55.herokuapp.com")d.date.setHours(d.l_h24+2);
   q["this_time"] = d.l_now_all;
   if (req.method == "POST") {
     req.on('data', function (v) {
