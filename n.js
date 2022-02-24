@@ -20,9 +20,9 @@ http.createServer(function (req, res) {
     req.on('data', function (v) {
       var post = JSON.parse('{"' + decodeURIComponent(v).replaceAll("+", " ").replaceAll("&", '","').replaceAll("=", '":"') + '","url":'+JSON.stringify(q)+'}');
       if(post.hasOwnProperty("do")){
-      db.collection('do').doc(d.l_now_short + " " + q.pathname.slice(1, -1).replaceAll("/", " ")).set(post);
+        if(q.hostname.toString()=="eg55.herokuapp.com")db.collection('do').doc(d.l_now_short + " " + q.pathname.slice(1, -1).replaceAll("/", " ")).set(post);
       } else {
-      db.collection("post").doc(d.l_now_short + " " + q.pathname.slice(1, -1).replaceAll("/", " ")).set(post);
+        if(q.hostname.toString()=="eg55.herokuapp.com")db.collection("post").doc(d.l_now_short + " " + q.pathname.slice(1, -1).replaceAll("/", " ")).set(post);
       }
       res.end();
     });
@@ -43,7 +43,7 @@ http.createServer(function (req, res) {
       filename = "./html" + "/404/index.html";
     }
     if (Object.keys(q.query).length > 0) {
-      db.collection('get').doc(d.l_now_short + " " + q.pathname.slice(1, -1).replaceAll("/", " ")).set(JSON.parse(JSON.stringify(q)));
+      if(q.hostname.toString()=="eg55.herokuapp.com")db.collection('get').doc(d.l_now_short + " " + q.pathname.slice(1, -1).replaceAll("/", " ")).set(JSON.parse(JSON.stringify(q)));
     }
     fs.readFile(filename, function (err, data) {
       res.write(data);
