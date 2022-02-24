@@ -144,12 +144,12 @@
     [r] {
       justify-content: center;
       padding: 1px;
-      font-size: 12px;
+      font-size: 14px;
       border-radius: 100%;
       box-shadow:0 0 10px 1px inset rgb(150, 204, 0) ;
       background-color: rgba(255, 238, 0, 0.377);
-      height: 60px;
-      width: 60px;
+      height: 50px;
+      width: 50px;
       display: flex;
       flex-wrap: nowrap;
       align-items: center;
@@ -259,7 +259,7 @@
   x072530245 = setInterval(() => {
     if (zrr != "x07263016") {
       for (let i = 1; i < zrr.length; i++) {
-        document.getElementById('x08od4245').innerHTML += '<div class="bur" bu id="' + i + '" onclick="bur(' + i + ')"><div r>' + zrr[i][6] + ' </div>' + zrr[i][1] + '<div></div></div>';
+        document.getElementById('x08od4245').innerHTML += '<div class="bur" bu id="' + i + '" onclick="bur(' + i + ')"><div r>' + zrr[i][6].toString() + '</div>' + zrr[i][1] + '<div></div></div>';
       }
       clearInterval(x072530245);
     }
