@@ -47,4 +47,5 @@ function do_(s) {
     start_time.click();
 }
 
+start_do.value = "start session";
 start_time.click();
