@@ -31,9 +31,18 @@ function zero_start(x) {
     }
 }
 
+function zero_start_m(x) {
+    if (x.length == 1) {
+        return "00" + x;
+    } else if (x.length == 2) {
+        return "0" + x;
+    } else {
+        return x;
+    }
+}
 function fstart_time() {
     d = new Date();
-    return d.getFullYear().toString() + "-" + zero_start((d.getMonth() + 1).toString()) + "-" + zero_start(d.getDate().toString()) + " " + zero_start(d.getHours().toString()) + ":" + zero_start(d.getMinutes().toString()) + ":" + zero_start(d.getSeconds().toString()) + "." + d.getMilliseconds().toString();
+    return d.getFullYear().toString() + "-" + zero_start((d.getMonth() + 1).toString()) + "-" + zero_start(d.getDate().toString()) + " " + zero_start(d.getHours().toString()) + ":" + zero_start(d.getMinutes().toString()) + ":" + zero_start(d.getSeconds().toString()) + "." + zero_start_m(d.getMilliseconds().toString());
 }
 
 if (localStorage.getItem("start_time") == null) {
