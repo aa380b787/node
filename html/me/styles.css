@@ -1,0 +1,113 @@
+:root {
+  --bg1: rgb(92, 202, 88);
+  --bg2: rgb(15, 156, 24);
+  --b_c: rgb(94, 94, 94);
+  --b_p: calc(var(--w)*0.2);
+  --f_c: rgb(90, 0, 0);
+  --hover: rgb(134, 134, 255);
+  --w: calc((1vw - 0px)/10);
+  --h: calc((1vh - 0px)/10);
+  --px: 1px;
+  --pp: calc(1vmin/10);
+  --ru: calc(var(--pp)*10);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: calc(var(--pp) * 16);
+  color: var(--f_c);
+  line-height: 1;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+@media only screen and (max-height: 590px) {
+  :root {
+    --pp: calc(var(--pp))
+  }
+}
+
+@media only screen and (max-width: 590px) {
+  :root {
+    --pp: calc(var(--pp))
+  }
+}
+
+/*
+@font-face {
+  font-family: font;
+  src: url(https://www.fontstatic.com/fonts/bahij/bahij.woff);
+}
+
+@font-face {
+  font-family: title;
+  src: url(https://www.fontstatic.com/fonts/decotype-thuluth/DecoType-Thuluth.woff);
+}
+*/
+body:not(span,[n]) {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  /*user-drag: none;*/
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /*direction: rtl;*/
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-behavior: smooth;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: calc(var(--pp)*15);
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 calc(var(--pp)*5) --bg2;
+  border-radius: calc(var(--pp)*10);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg1);
+  border-radius: calc(var(--pp)*10);
+  transition: all 1s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.vl {
+  width: var(--b_p);
+  height: 100%;
+  background-image: linear-gradient(transparent, var(--b_c), var(--b_c), var(--b_c), transparent);
+  border-radius: 100%;
+}
+
+.hl {
+  height: calc(var(--b_p)*2);
+  width: 100%;
+  background-image: linear-gradient(90deg, transparent, var(--b_c), var(--b_c), var(--b_c), transparent);
+  border-radius: 100%;
+}
+
+header{
+  height: calc(var(--pp)*100);
+  width: 100%;
+  background-color: brown;
+}

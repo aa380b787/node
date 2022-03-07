@@ -5,26 +5,28 @@
   --b_p: calc(var(--w)*0.2);
   --f_c: rgb(90, 0, 0);
   --hover: rgb(134, 134, 255);
-  --w: calc((100vw - 20px)/100);
-  --p: 1px;
-  --ru: calc(var(--w)*10);
+  --w: calc((1vw - 0px)/10);
+  --h: calc((1vh - 0px)/10);
+  --px: 1px;
+  --pp: calc(1vmin/10);
+  --ru: calc(var(--pp)*10);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: calc(4 * var(--w));
+  font-size: calc(var(--pp) * 16);
   color: var(--f_c);
   line-height: 1;
   text-align: center;
   scroll-behavior: smooth;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (max-height: 590px) {
   :root {
-    --w: calc(var(--w))
+    --pp: calc(var(--pp))
   }
 }
 
 @media only screen and (max-width: 590px) {
   :root {
-    --w: calc(var(--w))
+    --pp: calc(var(--pp))
   }
 }
 
@@ -39,7 +41,7 @@
   src: url(https://www.fontstatic.com/fonts/decotype-thuluth/DecoType-Thuluth.woff);
 }
 */
-body:not(span, [n]) {
+body:not(span,[n]) {
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -68,17 +70,17 @@ a{
 }
 
 ::-webkit-scrollbar {
-  width: 15px;
+  width: calc(var(--pp)*15);
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px --bg2;
-  border-radius: 10px;
+  box-shadow: inset 0 0 calc(var(--pp)*5) --bg2;
+  border-radius: calc(var(--pp)*10);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--bg1);
-  border-radius: 10px;
+  border-radius: calc(var(--pp)*10);
   transition: all 1s;
 }
 
