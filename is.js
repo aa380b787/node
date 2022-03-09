@@ -1,27 +1,28 @@
-module.exports = class dt {
-    constructor() {
-      this.date = new Date();
+var exp = {
+  dt: class {
+    constructor(date = new Date()) {
+      this.date = date;
       this.xweekx = ["Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur"];
       this.xweekarx = ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
     }
     /**Zero Start string*/
     z(x) {
       if (x.toString().length == 1) {
-          return ("0" + x).toString();
+        return "0" + x.toString();
       } else {
-          return x.toString();
-      }
-  }
-  /**Zero Start string*/
-  z_mse(x) {
-    if (x.toString().length == 1) {
-        return ("00" + x).toString();
-    }else if(x.toString().length == 2){
-      return ("0" + x).toString();
-    } else {
         return x.toString();
+      }
     }
-}
+    /**Zero Start string*/
+    z_mse(x) {
+      if (x.toString().length == 1) {
+        return "00" + x.toString();
+      } else if (x.toString().length == 2) {
+        return "0" + x.toString();
+      } else {
+        return x.toString().substring(0, 3);
+      }
+    }
     /**milli*/
     get l_mse() {
       return this.date.getMilliseconds();
@@ -134,91 +135,106 @@ module.exports = class dt {
     get u_year() {
       return this.date.getUTCFullYear() - 2000;
     }
-    get l_now_all(){
-    return this.z(this.l_yearf) + "-" + this.z(this.l_mo) + "-" + this.z(this.l_day) + " " + this.z(this.l_h24) + ":" + this.z(this.l_mi) + ":" + this.z(this.l_se) + "." + this.z_mse(this.l_mse);
+    get l_now_all() {
+      return this.z(this.l_yearf) + "-" + this.z(this.l_mo) + "-" + this.z(this.l_day) + " " + this.z(this.l_h24) + ":" + this.z(this.l_mi) + ":" + this.z(this.l_se) + "." + this.z_mse(this.l_mse);
     }
-    get l_now_short(){
-    return  this.z(this.l_year) + "-" + this.z(this.l_mo) + "-" + this.z(this.l_day) + " " + this.z(this.l_h24) + ":" + this.z(this.l_mi) + ":" + this.z(this.l_se);
+    get l_now_short() {
+      return this.z(this.l_year) + "-" + this.z(this.l_mo) + "-" + this.z(this.l_day) + " " + this.z(this.l_h24) + ":" + this.z(this.l_mi) + ":" + this.z(this.l_se);
     }
+  },
+  charr: [["\n", "xwq"],
+  ["`", "xaz"],
+  ["~", "xbz"],
+  ["!", "xcz"],
+  ["@", "xdz"],
+  ["#", "xez"],
+  ["$", "xfz"],
+  ["%", "xgz"],
+  ["^", "xhz"],
+  ["&", "xiz"],
+  ["*", "xjz"],
+  ["(", "xkz"],
+  [")", "xlz"],
+  ["-", "xmz"],
+  ["=", "xnz"],
+  ["+", "xoz"],
+  ["[", "xpz"],
+  ["]", "xqz"],
+  ["{", "xrz"],
+  ["}", "xsz"],
+  [";", "xtz"],
+  [":", "xuz"],
+  ["'", "xvz"],
+  ['"', "xwz"],
+  ["\\", "xaq"],
+  ["|", "xbq"],
+  [",", "xcq"],
+  [".", "xdq"],
+  ["<", "xeq"],
+  [">", "xfq"],
+  ["/", "xgq"],
+  ["?", "xhq"],
+  ["	", "xiq"],
+    /*["_","xjq"],
+    [" ","xkq"],
+    ["0","xlq"],
+    ["1","xmq"],
+    ["2","xnq"],
+    ["3","xoq"],
+    ["4","xpq"],
+    ["5","xrq"],
+    ["6","xsq"],
+    ["7","xtq"],
+    ["8","xuq"],
+    ["9","xvq"],*/
+  ], char_ar: [
+    ["عبد ال", "عبدال"],
+    ["ى", "ي"],
+    ["ة", "ه"],
+    ["وال", ""],
+    ["ال", ""],
+    ["أ", "ا"],
+    ["إ", "ا"],
+    ["آ", "ا"],
+    ["ـ", ""],
+    ["ّ", ""],
+    ["َ", ""],
+    ["ً", ""],
+    ["ُ", ""],
+    ["ٌ", ""],
+    ["‘", " "],
+    ["؛", " "],
+    ["ِ", ""],
+    ["ٍ", ""],
+    ["،", " "],
+    ["~", " "],
+    ["ْ", ""],
+    ["’", " "],
+    [",", " "],
+    ['٠', '0'],
+    ['١', '1'],
+    ['٢', '2'],
+    ['٣', '3'],
+    ['٤', '4'],
+    ['٥', '5'],
+    ['٦', '6'],
+    ['٧', '7'],
+    ['٨', '8'],
+    ['٩', '9'],
+  ],
+  url_decode: function (string) {
+    for (var i = 0; i < charr.length; i++) {
+      string = string.replaceAll(charr[i][1], charr[i][0]);
+    }
+    return JSON.parse(string);
+  },
+  url_encode: function (jso) {
+    jso = JSON.stringify(jso);
+    for (var i = 0; i < charr.length; i++) {
+      jso = jso.replaceAll(charr[i][0], charr[i][1]);
+    }
+    return jso;
   }
-  const charr = [["\n","xwq"]
-["`","xaz"],
-["~","xbz"],
-["!","xcz"],
-["@","xdz"],
-["#","xez"],
-["$","xfz"],
-["%","xgz"],
-["^","xhz"],
-["&","xiz"],
-["*","xjz"],
-["(","xkz"],
-[")","xlz"],
-["-","xmz"],
-["=","xnz"],
-["+","xoz"],
-["[","xpz"],
-["]","xqz"],
-["{","xrz"],
-["}","xsz"],
-[";","xtz"],
-[":","xuz"],
-["'","xvz"],
-['"',"xwz"],
-["\\","xaq"],
-["|","xbq"],
-[",","xcq"],
-[".","xdq"],
-["<","xeq"],
-[">","xfq"],
-["/","xgq"],
-["?","xhq"],
-["	","xiq"],
-/*["_","xjq"],
-[" ","xkq"],
-["0","xlq"],
-["1","xmq"],
-["2","xnq"],
-["3","xoq"],
-["4","xpq"],
-["5","xrq"],
-["6","xsq"],
-["7","xtq"],
-["8","xuq"],
-["9","xvq"],*/
-];
-const char_ar = [
-    ["عبد ال","عبدال"],
-    ["ى","ي"],
-    ["ة","ه"],
-    ["وال",""],
-    ["ال",""],
-    ["أ","ا"],
-    ["إ","ا"],
-    ["آ","ا"],
-    ["ـ",""],
-    ["ّ",""],
-    ["َ",""],
-    ["ً",""],
-    ["ُ",""],
-    ["ٌ",""],
-    ["‘"," "],
-    ["؛"," "],
-    ["ِ",""],
-    ["ٍ",""],
-    ["،"," "],
-    ["~"," "],
-    ["ْ",""],
-    ["’"," "],
-    [","," "],
-    ['٠','0'],
-    ['١','1'],
-    ['٢','2'],
-    ['٣','3'],
-    ['٤','4'],
-    ['٥','5'],
-    ['٦','6'],
-    ['٧','7'],
-    ['٨','8'],
-    ['٩','9'],
-];
+}
+
+module.exports = exp;

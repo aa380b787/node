@@ -105,9 +105,3 @@ body {
   background-image: linear-gradient(90deg, transparent, var(--b_c), var(--b_c), var(--b_c), transparent);
   border-radius: 100%;
 }
-
-header{
-  height: calc(var(--pp)*100);
-  width: 100%;
-  background-color: brown;
-}

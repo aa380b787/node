@@ -1,6 +1,6 @@
-module.exports = class dt {
-  constructor() {
-    this.date = new Date();
+class dt {
+  constructor(date = new Date()) {
+    this.date = date;
     this.xweekx = ["Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur"];
     this.xweekarx = ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
   }
@@ -141,7 +141,6 @@ module.exports = class dt {
     return this.z(this.l_year) + "-" + this.z(this.l_mo) + "-" + this.z(this.l_day) + " " + this.z(this.l_h24) + ":" + this.z(this.l_mi) + ":" + this.z(this.l_se);
   }
 }
-
 
 const charr = [["\n", "xwq"],
 ["`", "xaz"],
