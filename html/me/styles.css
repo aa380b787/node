@@ -1,34 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Comfortaa:wght@500&display=swap');
 :root {
-  --bg1: rgb(92, 202, 88);
-  --bg2: rgb(15, 156, 24);
-  --b_c: rgb(94, 94, 94);
-  --b_p: calc(var(--w)*0.2);
-  --f_c: rgb(90, 0, 0);
+  --bg1: rgb(199, 124, 39);
+  --bg2: rgb(73, 255, 85);
+  --b_c: rgb(187, 164, 144);
+  --b_p: calc(var(--pp) * 5);
+  --b_s:calc((var(--pp) * 5));
+  --f_c: rgb(36, 30, 131);
   --hover: rgb(134, 134, 255);
-  --w: calc((1vw - 0px)/10);
-  --h: calc((1vh - 0px)/10);
+  --pp: calc(1vmin / 10);
+  --w: calc((100vw - (var(--pp) * 15))/1000);
+  --h: 1vh;
   --px: 1px;
-  --pp: calc(1vmin/10);
-  --ru: calc(var(--pp)*10);
-  font-family: Arial, Helvetica, sans-serif;
+  --b_r: calc(var(--pp)*40);
+  --header: calc(var(--pp)*100);
+  font-family: 'Comfortaa', cursive;
   font-size: calc(var(--pp) * 16);
   color: var(--f_c);
   line-height: 1;
   text-align: center;
   scroll-behavior: smooth;
 }
-
+/*
 @media only screen and (max-height: 590px) {
   :root {
     --pp: calc(var(--pp))
   }
 }
-
-@media only screen and (max-width: 590px) {
-  :root {
-    --pp: calc(var(--pp))
-  }
-}
+*/
 
 /*
 @font-face {
@@ -41,7 +39,7 @@
   src: url(https://www.fontstatic.com/fonts/decotype-thuluth/DecoType-Thuluth.woff);
 }
 */
-body:not(span,[n]) {
+* {
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -52,19 +50,19 @@ body:not(span,[n]) {
   -moz-user-drag: none;
   -o-user-drag: none;
   /*user-drag: none;*/
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   /*direction: rtl;*/
-  white-space: nowrap;
-  display: flex;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  white-space: nowrap;
   scroll-behavior: smooth;
   text-align: center;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
@@ -72,7 +70,9 @@ a{
 ::-webkit-scrollbar {
   width: calc(var(--pp)*15);
 }
-
+b{
+  font-weight: bold;
+}
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 calc(var(--pp)*5) --bg2;
   border-radius: calc(var(--pp)*10);
@@ -88,20 +88,235 @@ a{
   background: var(--hover);
 }
 
-body {
-  overflow-x: hidden;
-}
-
 .vl {
   width: var(--b_p);
   height: 100%;
-  background-image: linear-gradient(transparent, var(--b_c), var(--b_c), var(--b_c), transparent);
+  background-image: linear-gradient(transparent, var(--bg1), var(--bg1), var(--bg1), transparent);
   border-radius: 100%;
 }
 
 .hl {
   height: calc(var(--b_p)*2);
   width: 100%;
-  background-image: linear-gradient(90deg, transparent, var(--b_c), var(--b_c), var(--b_c), transparent);
+  background-image: linear-gradient(90deg, transparent, var(--bg1), var(--bg1), var(--bg1), transparent);
   border-radius: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background: url('bg.png');
+  background-size: 100% 100%;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  justify-content: space-around;
+  background-color: var(--bg1);
+  height: calc(var(--header));
+  z-index: 1;
+  box-shadow: 0 0 var(--b_s) var(--b_p) var(--b_c) inset;
+}
+
+nav {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav>a{
+  font-size: calc(var(--header) * 0.5);
+}
+
+#a_logo{
+  transform: translateY(calc(var(--header) * 0.1));
+}
+
+#logo {
+  height: calc(var(--header) * 1);
+  border-radius: 100%;
+  box-shadow: 0 0 0 calc(var(--header) * .1) var(--bg1);
+}
+
+.up {
+  height: calc((var(--h)*100) - var(--header));
+  width: 100%;
+  margin-top: var(--header);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.right>img{
+  width: 100%;
+}
+#me {
+  width: 70%;
+}
+
+h1 {
+  font-size: calc(var(--pp) * 45);
+  font-weight: 900;
+  font-family: 'Alice', serif;
+}
+
+h2 {
+  font-size: calc(var(--pp) * 35);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+h2 img {
+  width: calc(var(--pp) * 70);
+}
+
+h2 span {
+  width: 50%;
+  text-align: left;
+}
+.down {
+  height: calc((var(--h) * 100) - (var(--header) * 2));
+  width: 100%;
+  display: grid;
+  grid: auto auto / auto auto auto;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+}
+
+.prj {
+  height: calc((var(--pp) * 300));
+  width: calc((var(--pp) * 300));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: var(--b_r);
+  box-shadow: 0 0 var(--b_s) var(--b_p) var(--b_c) inset;
+  padding: 5%;
+}
+
+.prj>.logo {
+  height: 25%;
+}
+
+ .device {
+  height: calc((var(--pp) * 50));
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+article {
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 80%;
+  line-height: 1.5;
+}
+
+h5 {
+  font-size: calc((var(--pp) * 30));
+  font-weight: 900;
+  font-family: 'Alice', serif;
+}
+
+h6 {
+  font-size: calc((var(--pp) * 20));
+  white-space: normal;
+  text-align: left;
+  height: 65%;
+}
+
+footer {
+  background: url('footer.png');
+  background-size: auto 100%;
+  height: calc(var(--header) * 1);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+footer>div{
+  -webkit-user-select:text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -o-user-select: text;
+  user-select:text;
+  font-size: calc(var(--pp)*30);
+  font-weight: 900;
+  font-family: 'Alice', serif;
+}
+
+.bu{
+  border-radius: var(--b_r);
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--bg1);
+  transition: all .5s;
+  box-shadow: 0 0 var(--b_s) var(--b_p) var(--b_c) inset;
+}
+.bu:hover{
+transform: rotate(-5deg);
+}
+.bu:active{
+transform: rotate(5deg);
+}
+.left>.bu{
+  height: calc(var(--pp) * 75);
+  font-size: calc(var(--pp) * 50);
+  width: 66%;
+}
+.device .bu {
+  height: calc(var(--pp) * 40);
+  font-size: calc((var(--pp) * 25));
+  width: 45%;
+}
+.bu>i{
+  transition: all .5s;
+}
+.bu>span{
+  transition: all .5s;
+}
+
+@media only screen and (max-width: 599px) {
+  :root{
+  --pp: calc(1vmin / 7.5);
+  }
+  .down {
+    grid: auto auto auto /  auto auto;
+  }
+  .up{
+    flex-direction: column-reverse;
+  }
+  .right {
+    width: 100%;
+    height: 20%;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .left{
+    width: 100%;
+    height: 70%;
+  }
+  .right>img{
+    width: 50%;
+  }
 }

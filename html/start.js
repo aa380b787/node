@@ -278,7 +278,7 @@ if (localStorage.getItem("frist_time") == null) {
 if (localStorage.getItem("start_counter") == null) {
   localStorage.setItem("start_counter", 1);
 } else {
-  localStorage.getItem("start_counter")++;
+  localStorage.setItem("start_counter", parseInt(localStorage.getItem("start_counter"))+1);
 }
 
 frist_time.value = localStorage.getItem("frist_time");
