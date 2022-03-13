@@ -164,10 +164,10 @@ nav>a{
   justify-content: space-evenly;
 }
 .right>img{
-  width: 100%;
+  width: calc(var(--pp) * 500);
 }
 #me {
-  width: 70%;
+  width: calc(var(--pp) * 500);
 }
 
 h1 {
@@ -282,7 +282,7 @@ transform: rotate(5deg);
 .left>.bu{
   height: calc(var(--pp) * 75);
   font-size: calc(var(--pp) * 50);
-  width: 66%;
+  width: calc(var(--pp) * 450);
 }
 .device .bu {
   height: calc(var(--pp) * 40);
