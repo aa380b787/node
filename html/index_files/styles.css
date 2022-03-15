@@ -306,10 +306,10 @@ transform: rotate(5deg);
   width: 45%;
 }
 .bu>i{
-  transition: all .5s;
+  transition: all .2s;
 }
 .bu>span{
-  transition: all .5s;
+  transition: all .2s;
 }
 
 @media only screen and (max-width: 599px) {
