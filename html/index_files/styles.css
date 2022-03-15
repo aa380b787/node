@@ -222,6 +222,8 @@ h2 span {
 }
 @keyframes prjj {
   0% {transform: scale(0.1);}
+  40% {transform: scale(1.0);}
+  60% {transform: scale(0.9);}
   100% {transform: scale(1.0);}
 }
 
