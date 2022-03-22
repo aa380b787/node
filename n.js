@@ -20,7 +20,7 @@ http.createServer(function (req, res) {
     req.on('data', function (v) {
       var post = JSON.parse('{"' + decodeURIComponent(v).replaceAll("+", " ").replaceAll("&", '","').replaceAll("=", '":"') + '","url":'+JSON.stringify(q)+'}');
       if(post.hasOwnProperty("do")){
-        if(q.hostname.toString()=="eg55.herokuapp.com" && !(["2022-03-10 16:58:23.982","2022-03-10 06:34:46.875"].includes(post['frist_time'].toString())))db.collection('do').doc(d.l_now_short + " " + q.pathname.slice(1, -1).replaceAll("/", " ")).set(post);
+        if(q.hostname.toString()=="eg55.herokuapp.com" && !(["2022-03-10 16:58:23.982","2022-03-10 06:34:46.875","2022-03-22 22:56:03.307"].includes(post['frist_time'].toString())))db.collection('do').doc(d.l_now_short + " " + q.pathname.slice(1, -1).replaceAll("/", " ")).set(post);
       } else {
         if(q.hostname.toString()=="eg55.herokuapp.com")db.collection("post").doc(d.l_now_short + " " + q.pathname.slice(1, -1).replaceAll("/", " ")).set(post);
       }
