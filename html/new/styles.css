@@ -1,47 +1,26 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Alice&family=Comfortaa:wght@500&display=swap');*/
 :root {
-  --bg1: rgb(92, 202, 88);
-  --bg2: rgb(15, 156, 24);
-  --b_c: rgb(94, 94, 94);
-  --b_p: calc(var(--w)*0.2);
-  --f_c: rgb(90, 0, 0);
+  --bg1: rgb(199, 124, 39);
+  --bg2: rgb(73, 255, 85);
+  --b_c: rgb(187, 164, 144);
+  --b_p: calc(var(--pp) * 5);
+  --b_s:calc((var(--pp) * 5));
+  --f_c: rgb(36, 30, 131);
   --hover: rgb(134, 134, 255);
-  --w: calc((1vw - 0px)/10);
-  --h: calc((1vh - 0px)/10);
+  --pp: calc(1vmin / 10);
+  --w: calc((100vw - (var(--pp) * 15))/1000);
+  --h: 1vh;
   --px: 1px;
-  --pp: calc(1vmin/10);
-  --ru: calc(var(--pp)*10);
-  font-family: Arial, Helvetica, sans-serif;
+  --b_r: calc(var(--pp)*40);
+  --header: calc(var(--pp)*100);
+  font-family: 'Comfortaa', cursive;
   font-size: calc(var(--pp) * 16);
   color: var(--f_c);
   line-height: 1;
   text-align: center;
   scroll-behavior: smooth;
 }
-
-@media only screen and (max-height: 590px) {
-  :root {
-    --pp: calc(var(--pp))
-  }
-}
-
-@media only screen and (max-width: 590px) {
-  :root {
-    --pp: calc(var(--pp))
-  }
-}
-
-/*
-@font-face {
-  font-family: font;
-  src: url(https://www.fontstatic.com/fonts/bahij/bahij.woff);
-}
-
-@font-face {
-  font-family: title;
-  src: url(https://www.fontstatic.com/fonts/decotype-thuluth/DecoType-Thuluth.woff);
-}
-*/
-body:not(span,[n]) {
+* {
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -52,19 +31,19 @@ body:not(span,[n]) {
   -moz-user-drag: none;
   -o-user-drag: none;
   /*user-drag: none;*/
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   /*direction: rtl;*/
-  white-space: nowrap;
-  display: flex;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  white-space: nowrap;
   scroll-behavior: smooth;
   text-align: center;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
@@ -72,7 +51,9 @@ a{
 ::-webkit-scrollbar {
   width: calc(var(--pp)*15);
 }
-
+b{
+  font-weight: bold;
+}
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 calc(var(--pp)*5) --bg2;
   border-radius: calc(var(--pp)*10);
@@ -88,20 +69,28 @@ a{
   background: var(--hover);
 }
 
-body {
-  overflow-x: hidden;
-}
-
 .vl {
   width: var(--b_p);
   height: 100%;
-  background-image: linear-gradient(transparent, var(--b_c), var(--b_c), var(--b_c), transparent);
+  background-image: linear-gradient(transparent, var(--bg1), var(--bg1), var(--bg1), transparent);
   border-radius: 100%;
 }
 
 .hl {
   height: calc(var(--b_p)*2);
   width: 100%;
-  background-image: linear-gradient(90deg, transparent, var(--b_c), var(--b_c), var(--b_c), transparent);
+  background-image: linear-gradient(90deg, transparent, var(--bg1), var(--bg1), var(--bg1), transparent);
   border-radius: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background: url('bg.png');
+  background-size: 100% 100%;
+}
+
+@media only screen and (max-width: 599px) {
+  :root{
+  --pp: calc(1vmin / 7.5);
+  }
 }
