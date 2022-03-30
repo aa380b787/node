@@ -134,7 +134,7 @@ h2{
   width: 100%;
 }
 #right{
-  width: 50%;
+  width: calc(var(--pp)*400);
   height: calc(var(--pp)*400);
   animation: 1s right 1s;
   position: relative;
