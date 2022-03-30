@@ -138,7 +138,7 @@ h2{
   height: calc(var(--pp)*400);
   animation: 1s right 1s;
   position: relative;
-  background-image:url(happy.png);
+  background-image:url(13.png);
   background-repeat:no-repeat ;
   background-size: 100% 100%;
 }
