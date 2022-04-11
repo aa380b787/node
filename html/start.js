@@ -289,4 +289,20 @@ function do_(s) {
   frist_time.click();
 }
 
+document.querySelectorAll(".darkreader").forEach((v,i)=>{
+  v.innerHTML="";
+});
 do_("start_session");
+
+function an(element, property_value,is_to,_duration) {
+  if (is_to == null) is_to = true;
+  if (_duration == null) _duration = 500;
+  document.querySelectorAll(element).forEach((v) => {
+      v.animate(
+          Object.fromEntries(Object.entries(property_value).map(([k, v]) => [k,(is_to?v:(v.reverse()))])), {
+          easing: 'linear',
+          duration: _duration,
+          fill: 'forwards'
+      });
+  });
+}
