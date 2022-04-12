@@ -123,7 +123,7 @@
             });
         }
     }
-    an('nav>a', {'transform': ['scale(0)',,'scale(1)', 'scale(0.9)','scale(1)']},true);
+    an('nav>a', {'transform': ['scale(0)',,'scale(1)', 'scale(0.9)','scale(1)']});
     window_resize();
     function getScrollPercent() {
         return (document.documentElement['scrollTop']) / ((document.documentElement['scrollHeight']) - document.documentElement.clientHeight) * 360;
@@ -134,12 +134,12 @@
         document.getElementById('logo').style.transform = "rotate(" + s + "deg)";
         if (s < 40 && !less40) {
             an('header', {'opacity': ['0', '1']},less40);
-            an('.prj', {'transform': ['scale(0)',,'scale(1)', 'scale(0.9)','scale(1)']},true);
+            an('.prj', {'transform': ['scale(0)',,'scale(1)', 'scale(0.9)','scale(1)']});
             less40 = true;
         }
         if (s > 40 && less40) {
             an('header', {'opacity': ['0', '1']},less40);
-            an('.prj', {'transform': ['scale(0)',,'scale(1)', 'scale(0.9)','scale(1)']},true);
+            an('.prj', {'transform': ['scale(0)',,'scale(1)', 'scale(0.9)','scale(1)']});
             less40 = false;
         }
     }
