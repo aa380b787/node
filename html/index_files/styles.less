@@ -12,6 +12,10 @@
 @font-family: 'Alice', serif;
 @background-image_circle: radial-gradient(circle, @background-color 0%, @border-color 10%, @background-color 40%);
 
+svg{
+  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+}
+
 :root {
   font-family: 'Comfortaa', cursive;
   font-size: (@px * 1.6);
@@ -248,8 +252,14 @@ h2 span {
 
 
 footer {
-  background: url('footer.png');
+  background-color: @background-color;
+  background-image: url("footer.png");
+  background-blend-mode:luminosity;
   background-size: auto 100%;
+  -webkit-mask-image: url("footer.png");
+  -webkit-mask-size: auto 100%;
+  mask-image: url("footer.png");
+  mask-size: auto 100%;
   height: @header;
   width: 100%;
   display: flex;
