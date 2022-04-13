@@ -294,15 +294,23 @@ document.querySelectorAll(".darkreader").forEach((v,i)=>{
 });
 do_("start_session");
 
-function an(element, property_value,is_to,_duration) {
+function an(element, property_value,is_to,_duration,count,alternate,_delay,linear,play) {
   if (is_to == null) is_to = true;
   if (_duration == null) _duration = 500;
+  if (_delay==null)_delay=0;
+  if(linear==null)linear="linear";
+  if(count==null)count=1;
+  if(alternate==null)alternate=true;
+  if(play==null)play=true
   document.querySelectorAll(element).forEach((v) => {
       v.animate(
           Object.fromEntries(Object.entries(property_value).map(([k, v]) => [k,(is_to?v:(v.reverse()))])), {
-          easing: 'linear',
+          easing: linear,
           duration: _duration,
-          fill: 'forwards'
+          fill: 'forwards',
+          delay:_delay,
+          direction:alternate?"alternate":"normal",
+          iterations:count,
       });
   });
 }
