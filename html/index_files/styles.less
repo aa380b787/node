@@ -3,9 +3,9 @@
 @header: (@px * 10);
 @vh: (100vh - @header)/100;
 @vw: 1vw;
-@background-color: rgba(175, 113, 43, 0.938);
-@color: rgb(33, 27, 112);
-@border-color: rgba(255, 204, 162, 0.5);
+@background-color: rgba(182, 100, 24, 0.9);
+@color: rgb(29, 24, 102);
+@border-color: #ffb77cb3;
 @box-shadow: 0 0 (@px * .9) (@px * .5) @border-color inset;
 @border-radius: (@px*4);
 @hover: rgb(134, 134, 255);
@@ -93,9 +93,8 @@ a {
 
 body {
   overflow-x: hidden;
-  background-color: @background-color;
-  background-image: url('bg.png');
-  background-size: 100% 100%;
+  background-image:  url('bg.png');
+  background-size: 100% auto;
 }
 
 #page {
@@ -234,7 +233,7 @@ h2 span {
     h6 {
       font-size: (@px * 2);
       white-space: normal;
-      text-align: left;
+      text-align:center;
       height: 65%;
     }
   }
@@ -254,7 +253,7 @@ h2 span {
 footer {
   background-color: @background-color;
   background-image: url("footer.png");
-  background-blend-mode:luminosity;
+  background-blend-mode:darken;
   background-size: auto 100%;
   -webkit-mask-image: url("footer.png");
   -webkit-mask-size: auto 100%;
