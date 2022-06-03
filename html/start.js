@@ -314,3 +314,6 @@ function an(element, property_value,is_to,_duration,count,alternate,_delay,linea
       });
   });
 }
+function c(c){
+  console.log(c);
+}
